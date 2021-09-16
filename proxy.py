@@ -31,7 +31,9 @@ def check(prox):
 	link = 'http://instagram.com/'
 	r.proxies = {
 	'http':'http://{}'.format(prox),
-	'https':'http://{}'.format(prox)
+	'https':'http://{}'.format(prox),
+    'http' : 'socks5://{}'.format(prox),
+    'http' : 'socks4://{}'.format(prox),
 	}
 	try:
 		req = r.get(link,timeout=100)
