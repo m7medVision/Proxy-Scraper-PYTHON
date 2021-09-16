@@ -22,7 +22,7 @@ jobs:
       pip install -r requirements.txt
     - name: Test with pytest
       run: |
-        pytest
+      pytest
     - name: Run main
       run: |
         python proxy.py
