@@ -23,4 +23,4 @@ jobs:
       run: |
         pip install pytest
         export PYTHONPATH=src
-        pytest
+        pytest proxy.py
