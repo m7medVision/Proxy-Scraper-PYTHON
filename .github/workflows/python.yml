@@ -1,10 +1,6 @@
 name: Python application
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push]
 
 jobs:
   build:
@@ -13,16 +9,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
       with:
-        python-version: 3.9
+        python-version: 3.7
     - name: Install dependencies
-      run: | 
-      pip install -r requirements.txt
+      run: |
+        python -m pip install --upgrade pip
+        pip install pipenv
+        pipenv install --dev
     - name: Test with pytest
       run: |
-      pytest
-    - name: Run main
-      run: |
-        python proxy.py
+        pytest
