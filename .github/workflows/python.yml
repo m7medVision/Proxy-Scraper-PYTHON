@@ -20,4 +20,5 @@ jobs:
         pipenv install --dev
     - name: Test with pytest
       run: |
-        pytest proxy.py
+      pip install pytest
+      pytest
